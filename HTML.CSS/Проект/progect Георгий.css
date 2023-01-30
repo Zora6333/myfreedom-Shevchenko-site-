@@ -1,0 +1,560 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 80px;
+  background: #ffffff;
+  padding: 20px 0;
+}
+.Y {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 27px px 27px 73px;
+}
+.navi {
+  display: flex;
+  justify-content: space-between;
+}
+a:first-child {
+  color: #5e81fe;
+}
+a {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+
+  color: #697ca6;
+
+  text-shadow: 0px 0px 5px #e6e6e6;
+  margin: 32px 42px 33px;
+}
+.icon {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 44px;
+  margin-left: 33px;
+}
+.P {
+  display: flex;
+  font-weight: 700;
+  color: #3a79ff;
+  text-decoration: none;
+  padding: 0.8em 1em calc(0.8em + 3px);
+  border-radius: 0px;
+  background: #d2e1ff;
+  box-shadow: 0 #3a79ff inset;
+  transition: 0.2s;
+}
+.Q {
+  display: flex;
+  align-items: center;
+}
+.mediaicon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctr1 {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #f4f7ff 0%, #f1f5ff 100%);
+}
+.A div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 60px;
+  text-align: center;
+  color: #3d4f9f;
+}
+.A {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.S {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 92px;
+  margin-bottom: 16px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d4f9f;
+}
+.D {
+  display: flex;
+  flex-direction: column;
+}
+.play {
+  height: 200px;
+  width: 200px;
+}
+.F {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #8d96bd;
+  margin-top: 28px;
+  width: 502px;
+}
+.group {
+  margin-top: 200px;
+}
+.vector {
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url(./img/clouds.svg);
+  background-size: 100%;
+}
+.clouds {
+  background-repeat: no-repeat;
+  background-image: url(./img/chart.svg);
+  background-size: 100%;
+  background-position: bottom center;
+}
+.gaz {
+  position: absolute;
+  width: 92px;
+  height: 80.26px;
+  left: 600px;
+  top: 550px;
+}
+.gaz2 {
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  left: 615px;
+  top: 565px;
+}
+footer {
+  height: 100px;
+  width: 100%;
+  left: 0px;
+  top: 650px;
+  border-radius: 0px;
+}
+.support {
+  margin-top: 58px;
+  margin-left: 276px;
+  margin-right: 276px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+.roll1 {
+  width: 1440px;
+  height: 776px;
+  display: flex;
+  filter: drop-shadow(0px 100px 150px #f2f6ff);
+}
+.roll3 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 210px;
+}
+.roll4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d4f9f;
+}
+.roll5 {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  color: #3d4f9f;
+  margin-top: 27px;
+}
+.roll6 {
+  margin-top: 27px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 29px;
+  letter-spacing: 0.03em;
+  color: #8d96bd;
+}
+.knopki {
+  margin-top: 60px;
+  display: flex;
+}
+.knopka1 {
+  width: 130px;
+  height: 43px;
+  background: #4c85ff;
+  box-shadow: 0px 5px 15px rgba(188, 199, 255, 0.75);
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.strelka {
+  margin-left: 6px;
+}
+.knopka2 {
+  width: 130px;
+  height: 43px;
+  border: 1px solid #d1d1e4;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #adb4d2;
+}
+
+.ctr2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 171px 340px 171px 340px;
+  background-image: url(./img/clouds4.svg);
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255);
+}
+.text2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text2 p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d4f9f;
+}
+.text2 h1 {
+  font-family: "M PLUS 1p", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 30px;
+  text-align: center;
+  color: #3d4f9f;
+}
+.kartinochki {
+  display: flex;
+  justify-content: center;
+  margin-top: 92px;
+}
+.knopochki {
+  display: flex;
+  justify-content: center;
+  margin-top: 92px;
+}
+.kartinochki div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+}
+.kartinochki h3 {
+  margin-top: 33px;
+}
+.kartinochki p {
+  width: 140px;
+  height: 102px;
+  margin-top: 33px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 19px;
+  text-align: center;
+  color: #adb3cb;
+}
+.content2 .kartinochki h3 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  color: #4074f8;
+}
+.content2 .kartinochki {
+  width: 105%;
+}
+.knopochki {
+  display: flex;
+  align-items: baseline;
+}
+.knopochki button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 113px;
+  height: 43px;
+  background: #ffd7d7;
+  border-radius: 2px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #d43f3f;
+  border: 2px;
+}
+.knopochki p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  color: #adb3cb;
+}
+/* main3 */
+.content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box1 {
+  background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 66px;
+  padding-right: 90px;
+  padding-bottom: 66px;
+}
+.box1 p:first-line {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 83px;
+  text-align: right;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+.box1 p:last-child {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: right;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  width: 30%;
+}
+.box1 img {
+  max-width: 65px;
+}
+.box2 {
+  background: linear-gradient(101.48deg, #e9efff 41.56%, #e0e9ff 81.53%);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 70px;
+  padding-left: 90px;
+  padding-bottom: 66px;
+}
+.box2 p:first-line {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 83px;
+  letter-spacing: 0.03em;
+  color: #5e80ff;
+}
+.box2 p:last-child {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: #5e80ff;
+  width: 20%;
+}
+
+.box2 img {
+  max-width: 71px;
+}
+/* main4 */
+
+.content4 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+.content4 .box4 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 92px;
+}
+.content4 .box4 .box3 {
+  display: flex;
+}
+.content4 .box4 .rolll {
+  max-width: 23px;
+}
+.box3 {
+  margin-right: 5%;
+  margin-left: 5%;
+  background: #ffffff;
+  border: 1px solid #d8e3fe;
+  box-shadow: 0px 15px 50px #eff4ff;
+}
+.content4 .box4 .box3 img {
+}
+.box5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box5 p {
+  width: 80%;
+}
+.content4 img:last-child {
+  margin-top: 104px;
+}
+.content4 p:first-child {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d4f9f;
+}
+.content4 h2 {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3d4f9f;
+}
+.box5 {
+  margin-top: 70px;
+}
+.box5 h3 {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  color: #3d4f9f;
+}
+.box5 p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #8d96bd;
+  margin-top: 32px;
+}
+.box5 .knopochkii {
+  display: flex;
+  justify-content: center;
+ width: 100%;
+  margin-top: 31px;
+}
+.box5 .knopochkii button:first-child {
+  width: 113px;
+  height: 43px;
+  background: #d2e1ff;
+  border-radius: 2px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #3a79ff;
+  border: none;
+}
+.box5 .knopochkii button:last-child {
+  background: #ffffff;
+  width: 25%;
+  height: 43px;
+  border: none;
+  border-radius: 2px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #a6b6da;
+}

@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header {
+    background-color: rgb(219, 14, 247);
+    padding: 50px 0px 0px;
+}
+nav {
+    background-color: rgb(119, 71, 165);
+    text-align: center;
+}
+header li{
+    display: inline-block;
+}
+header li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+}
+header li a:hover {
+    color: rgb(55, 0, 107);
+} 
+header li ul li {
+    display: block;
+    position: relative;
+}
+header li ul {
+    position: absolute; 
+    background-color: rgb(119, 71, 165);
+    width: 150px;
+    display: none;
+}
+header li ul li ul { 
+    left: 150px;
+    top:0px;
+}
+header  li:hover >  ul{
+    display: block;
+}
+header li ul li ul {
+    
+    position: absolute; 
+    background-color: rgb(119, 71, 165);
+}

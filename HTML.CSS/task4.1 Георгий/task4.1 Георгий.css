@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.conteiner {
+  max-width: 1100px;
+  margin: auto;
+}
+.gradient {
+  font-weight: 400;
+  padding-left: 300px;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  background: rgb(127, 126, 135);
+  background: linear-gradient(
+    90deg,
+    rgb(217, 216, 226) 0%,
+    rgb(138, 135, 135) 31%,
+    rgb(87, 88, 88) 100%
+  );
+}
+header {
+  height: 150px;
+  background-color: rgb(255, 159, 42);
+}
+header .conteiner,
+.conteiner .content {
+  overflow: auto;
+}
+.logo {
+  mix-blend-mode: multiply;
+  margin: 30px;
+  float: left;
+  padding-left: 300px;
+}
+.logo img {
+  height: 100px;
+  width: 100px;
+}
+header nav li {
+  display: flex;
+  justify-content: rtl;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 100px;
+  display: inline;
+  float: right;
+  margin-top: 40px;
+  bottom: unset;
+}
+header nav ul {
+  padding-right: 300px;
+}
+.start {
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: rgb(34, 97, 37);
+  border-radius: 10px;
+  margin-top: 20px;
+  color: rgb(194, 196, 197);
+  text-decoration: none;
+  background-color: rgb(100, 105, 109);
+}
+.tree {
+  padding-bottom: 50px;
+  padding-top: 50px;
+  margin-right: 20px;
+  float: left;
+  max-width: 300px;
+}
+.content p {
+  color: rgb(103, 107, 107);
+  font-size: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+footer {
+
+  padding: 100px;
+  height: 40px;
+  background-color: rgb(84, 87, 85);
+  padding-left: 1500px;
+}
+a {
+  font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+  text-decoration: none; 
+}
+h1 {
+  color: rgb(48, 47, 47);
+  font-size: 60px;
+}

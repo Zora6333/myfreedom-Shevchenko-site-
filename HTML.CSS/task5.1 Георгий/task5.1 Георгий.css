@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30px;
+height: 500px;
+width: 500px;
+  background-color: rgb(255, 230, 0);
+}
+button {
+  position: absolute;
+  padding: 5px;
+  top: 55px;
+  right: 925px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  color: black;
+}

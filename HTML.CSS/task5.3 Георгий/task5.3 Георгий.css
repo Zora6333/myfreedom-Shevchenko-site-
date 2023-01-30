@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #7cdaef;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+.Y {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 1000px;
+  height: 1450px;
+  background: rgba(14, 73, 126, 0.7);
+  padding: 104px 306px 0 306px;
+}
+.cloud {
+  position: relative;
+  max-width: auto;
+  margin: auto;
+}
+.ctr .cloud .cloud1 {
+  left: 101px;
+  top: 282.63px;
+  position: absolute;
+}
+.ctr .cloud .cloud2 {
+  left: 900px;
+  top: 45.08px;
+  position: absolute;
+  z-index: 1;
+}
+.ctr .cloud .cloud3 {
+  left: 944px;
+  top: 554px;
+  position: absolute;
+}
+.ctr {
+  position: relative;
+}
+.text h1 {
+  height: 46px;
+  width: 313px;
+  font-family: "Play";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  color: #ffffff;
+  margin: 99px 509px 78px 80px;
+}
+.text p {
+  font-family: "Play";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  margin: 24px 79px 36px 79px;
+}
+.text h2 {
+  font-family: "Play";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  color: #ffffff;
+  margin: 0px 715px 51px 80px;
+}
+.foot {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background-image: url(./grass.svg);
+}
+.text .image1 {
+  padding-left: 80px;
+}

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-block: border-box ;
+}
+.Q { 
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 0px;
+  background: rgb(42, 207, 212);
+  box-shadow: 0 -3px rgb(33, 180, 190) inset;
+  transition: 0.2s;
+} 
+.Q:hover { background: rgb(78, 87, 214); }
+.W {  
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 0px;
+  background: rgb(13, 179, 179);
+  box-shadow: 0 -3px rgb(28, 177, 197) inset;
+  transition: 0.2s;
+} 
+.W:hover { background: rgb(69, 105, 224); }
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

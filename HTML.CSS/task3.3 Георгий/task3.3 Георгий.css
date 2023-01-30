@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-size: cover;
+  height: 400px;
+  background-image: url(./204398-OZ3P4A-964.svg);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  padding: 0px;
+}
+h1 {
+  position: absolute;
+  width: 754px;
+  height: 140px;
+  left: 140px;
+  top: 120px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 5px;
+  font-size: 40px;
+  line-height: 63px;
+
+  color: #003395;
+}
+.Q {
+  position: absolute;
+  width: 754px;
+  height: 140px;
+  left: 140px;
+  top: 150px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 5px;
+  font-size: 15px;
+  line-height: 63px;
+  color: #000000;
+}
+
+nav {
+  padding-left: 460px;
+  background-color: rgb(37, 0, 201);
+}
+a {
+  color: rgb(234, 233, 238);
+  text-decoration: none;
+  display: inline-block;
+  padding: 30px;
+}
+a:hover{
+  color: #000000;
+}
+
+main {
+  width: auto;
+}
+.leftcolumn {
+  
+  display: flex;
+  padding-top: 57px;
+  display: inline-block;
+  width: 754px;
+}
+.rightcolumn {
+  display: flex;
+  padding-top: 56px;
+  margin-left: 30px;
+  display: inline-block;
+  width: 362px;
+}
+.A {
+  border: solid 2px #33008d;
+  padding: 19px 19px 26px 19px;
+}
+.B {
+  margin-top: 55px;
+  border: solid 2px #33008d;
+  padding: 19px 19px 26px 19px;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-family: "Roboto";
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  background-color: #24b0ff;
+  padding: 14 17 14 17;
+}
+ul {
+  list-style: none;
+  padding: 22px 19px 24px 64px;
+}
+h2 {
+  color: #003395;
+  font-family: "Roboto";
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  border-top: 2px solid #003395;
+  border-bottom: 2px solid #003395;
+}
+footer {
+  color: aliceblue;
+  margin-top: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  background: linear-gradient(180deg, #003395 0%, #00205f 100%);
+}
+.W {
+  margin-right: 140px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+p {
+  padding: 14px 19px 26px 19px;
+}
+.F {
+  display: flex;
+  justify-content: right;
+}
+.Y{
+display: flex;
+justify-content: center;
+}
+body {
+  font-family: "Roboto"; 
+}

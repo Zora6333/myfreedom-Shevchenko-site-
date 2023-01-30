@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+button {
+  width: 43px;
+  height: 45px;
+  background-color: rgb(83, 175, 118);
+  background-image: url(./loupe.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+input {
+  padding: 10px;
+  vertical-align: top;
+  border: none;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+
+div {
+  border: 5px rgb(0, 39, 15) solid;
+  display: inline-block;
+  border-radius: 3px;
+}

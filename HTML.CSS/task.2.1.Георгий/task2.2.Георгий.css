@@ -1,0 +1,22 @@
+body {
+  background: url("./cat.png") no-repeat;
+  background-size: cover;
+}
+
+h2,
+h3 {
+  width: 45%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 22, 1) 31%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  font-size: 50px;
+  font-weight: bold;
+}
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
