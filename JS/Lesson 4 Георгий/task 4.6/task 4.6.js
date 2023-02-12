@@ -1,16 +1,19 @@
 
-function sumObjectValues() {
-     
- 
-              
-        function sumSalaries() { 
+
+        function sumSalaries() {
                 const objectWithNumbers = {
-                a: 10,
-                b: 20,
-                c: 'string',
-                d: 12,
+                        a: 10,
+                        b: 20,
+                        c: 'string',
+                        d: 12,
+                }
+                let sum = 0
+
+                for(let key in objectWithNumbers){
+                        if (typeof objectWithNumbers[key] === 'number') {
+                                sum += objectWithNumbers[key]
+                        }
+                }
+                alert(sum)
         }
-        const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
-              alert( sumValues );        
-}
-sumObjectValues(sumSalaries)
+sumSalaries()
