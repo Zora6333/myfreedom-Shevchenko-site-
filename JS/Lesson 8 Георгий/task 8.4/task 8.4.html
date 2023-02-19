@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./task 8.4.css" />
     <title>Document</title>
 </head>
+
 <body>
+    <button id="but1"
+        onclick="document.getElementById('block').style.display='block'; document.getElementById('but1').style.display='none'; document.getElementById('but2').style.display='block';"
+        style="display:none;">Показать</button>
+
+
+    <div id="block">
+        <button id="but2"
+            onclick=" document.getElementById('block').style.display='none'; document.getElementById('but2').style.display='none'; document.getElementById('but1').style.display='block';"><span>&#9746</span></button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea provident velit nam nesciunt neque aliquam
+            molestiae doloremque aspernatur cupiditate, illum veniam debitis ipsum nulla itaque ipsam sit minus aperiam
+            quaerat.</p>
+    </div>
     <script src="./task 8.4.js"></script>
-</body> 
+</body>
+
 </html>
