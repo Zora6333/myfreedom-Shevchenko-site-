@@ -1,0 +1,367 @@
+//1. Повторите поведение страницы по данному образцу. Координаты должны меняться и зависеть от положения курсора мыши на
+в области//
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <p><code>X</code>: <span id="x">n/a</span></p>
+        <p><code>Y</code>: <span id="y">n/a</span></p>
+    </div>
+    <style>
+        .box {
+            width: 3400px;
+
+            height: 4400px;
+        }
+    </style>
+
+    <script>
+        const box = document.querySelector(".box");
+        const pageX = document.getElementById("x");
+        const pageY = document.getElementById("y");
+
+        function updateDisplay(event) {
+            pageX.innerText = event.pageX;
+            pageY.innerText = event.pageY;
+        }
+
+        box.addEventListener("mousemove", updateDisplay, false);
+        box.addEventListener("mouseenter", updateDisplay, false);
+        box.addEventListener("mouseleave", updateDisplay, false);
+
+    </script>
+</body>
+
+</html>
+//2. Повторите поведение страницы по данному образцу. При нажатии на область, красный квадрат его верхний левый угол
+доложен поместиться в ту координату, на которую вы нажали//
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="field">
+        <div id='ball'></div>
+    </div>
+    <style>
+        #field {
+            width: 2440px;
+            height: 2050px;
+            border: 10px solid black;
+            background-color: #00FF00;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        #ball {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            transition: all 1s;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        field.onclick = function (event) {
+
+
+            let fieldCoords = this.getBoundingClientRect();
+
+
+            let ballCoords = {
+                top: event.clientY - fieldCoords.top - field.clientTop,
+                left: event.clientX - fieldCoords.left - field.clientLeft
+            };
+
+
+            if (ballCoords.top < 0) ballCoords.top = 0;
+
+
+            if (ballCoords.left < 0) ballCoords.left = 0;
+
+
+
+            if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+                ballCoords.left = field.clientWidth - ball.clientWidth;
+            }
+
+            if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+                ballCoords.top = field.clientHeight - ball.clientHeight;
+            }
+
+            ball.style.left = ballCoords.left + 'px';
+            ball.style.top = ballCoords.top + 'px';
+        }
+    </script>
+</body>
+
+</html>
+//3. По аналогии со вторым заданием сделайте чтобы центр квадрата помещался в координату области//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="field">
+      <div id='ball'></div>
+    </div>
+    <style>
+      #field {
+        width: 2440px;
+        height: 2050px;
+        border: 10px solid black;
+        background-color: #00FF00;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+  
+      #ball {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        transition: all 1s;
+        background-color: aqua;
+      }
+    </style>
+    <script>
+      field.onclick = function (event) {
+  
+
+        let fieldCoords = this.getBoundingClientRect();
+  
+
+        let ballCoords = {
+          top: event.clientY - fieldCoords.top - field.clientTop - ball.clientHeight / 2,
+          left: event.clientX - fieldCoords.left - field.clientLeft - ball.clientWidth / 2
+        };
+  
+        if (ballCoords.top < 0) ballCoords.top = 0;
+  
+        if (ballCoords.left < 0) ballCoords.left = 0;
+  
+  
+        if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+          ballCoords.left = field.clientWidth - ball.clientWidth;
+        }
+  
+        if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+          ballCoords.top = field.clientHeight - ball.clientHeight;
+        }
+  
+        ball.style.left = ballCoords.left + 'px';
+        ball.style.top = ballCoords.top + 'px';
+      }
+    </script>
+  </body>
+  
+</html>
+//4. Создайте инпут который будет выводить код последнего элемента введенного в инпут //
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input>
+    <p id="log"></p>
+    <script>
+        let input = document.querySelector('input');
+        let text = document.getElementById('log');
+input.addEventListener('keypress', event)
+    
+
+function event (e){
+    log.textContent = 'Код нажатой клавиши:'+ 'code ='+ e.keyCode
+}
+    </script>
+</body>
+</html>
+//5. Создайте инпут который будет выводить последний элемент введенный в инпут //
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input>
+    <p id="log"></p>
+    <script>
+        const input = document.querySelector('input');
+        const log = document.getElementById('log');
+
+        input.addEventListener('keydown', logKey);
+
+        function logKey(keydown) {
+            log.textContent =   keydown.key;
+        }
+    </script>
+</body>
+
+</html>
+
+//6. Дан элемент. Сделайте так, чтобы по клику на него он красился в красный цвет, но только если в момент клика нажата клавиша Ctrl.//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="log" >Нажми на меня только незабудь ctrl</p>
+    <script src="./task 7.6.js"></script>
+</body>
+</html>
+
+let log = document.getElementById('log')
+document.addEventListener('click',style) 
+function style (e) {
+    if (keyCode = e.ctrlKey){ log.style.background = 'red'} else {log.style.background = 'none' }
+}
+//7. Дан элемент. Сделайте так, чтобы при клике на него и нажатой клавише Ctrl - в его текст записывалось '1', при нажатой клавише Alt - '2', а при нажатой клавише Shift - '3'.//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="log">НАЖМИ МЕНЯ</p>
+    <script src="./task 7.7.js"></script>
+</body>
+</html>
+
+let log = document.getElementById('log')
+document.addEventListener('click',style) 
+function style (e){
+    if (keyCode = e.ctrlKey){alert('1')}
+    if (keyCode = e.altKey){ alert('2')}
+    if (keyCode = e.shiftKey){ alert('3')}
+}
+//8. Создайте кнопку и элемент. При нажатии на кнопку, будет скрываться элемент//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="but">НАЖМИ МЕНЯ</button>
+    <p id="log">Я СПРЯЧУСЬ</p>
+    <script src="./task 7.8.js"></script>
+</body>
+</html>
+
+let but = document.getElementById('but')
+let log = document.getElementById('log')
+document.addEventListener('click',hiddenCloseclick)
+function hiddenCloseclick() {
+
+      if (log.style.display == "none"){
+	  log.style.display = "block";
+	  } else {
+	 log.style.display = "none"}
+    };
+	
+    //9. Создайте раскрывающееся меню//
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./task 7.9.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="sweeties" class="menu">
+        <span  class="title">Список (нажми меня)!</span>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </div>
+    <script src="./task 7.9.js"></script>
+</body>
+</html>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.menu ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+  }
+
+  .menu .title {
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .menu .title::before {
+    font-size: 80%;
+    color: rgb(72, 247, 72);
+  }
+
+
+
+  .menu.open ul {
+    display: block;
+  }
+
+  let menuElem = document.getElementById('sweeties');
+let titleElem = menuElem.querySelector('.title');
+
+titleElem.onclick = function() {
+  menuElem.classList.toggle('open');
+};

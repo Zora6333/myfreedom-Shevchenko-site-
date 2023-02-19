@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <p><code>X</code>: <span id="x">n/a</span></p>
+        <p><code>Y</code>: <span id="y">n/a</span></p>
+      </div>
+      <style>
+        .box {
+          width: 3400px;
+      
+          height: 4400px;
+        }
+      </style> 
+
+    <script>
+        const box = document.querySelector(".box");
+        const pageX = document.getElementById("x");
+        const pageY = document.getElementById("y");
+
+        function updateDisplay(event) {
+            pageX.innerText = event.pageX;
+            pageY.innerText = event.pageY;
+        }
+
+        box.addEventListener("mousemove", updateDisplay, false);
+        box.addEventListener("mouseenter", updateDisplay, false);
+        box.addEventListener("mouseleave", updateDisplay, false);
+
+    </script>
+</body>
+
+</html>
