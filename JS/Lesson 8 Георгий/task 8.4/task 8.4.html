@@ -6,23 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./task 8.4.css" />
+    <script src="./task 8.4.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
-    <button id="but1"
-        onclick="document.getElementById('block').style.display='block'; document.getElementById('but1').style.display='none'; document.getElementById('but2').style.display='block';"
-        style="display:none;">Показать</button>
-
-
-    <div id="block">
-        <button id="but2"
-            onclick=" document.getElementById('block').style.display='none'; document.getElementById('but2').style.display='none'; document.getElementById('but1').style.display='block';"><span>&#9746</span></button>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea provident velit nam nesciunt neque aliquam
-            molestiae doloremque aspernatur cupiditate, illum veniam debitis ipsum nulla itaque ipsam sit minus aperiam
-            quaerat.</p>
+    <div id="conteiner">
+        <button id="but1" onclick=" 
+            document.getElementById('but1').style.display='none'; 
+            document.getElementById('but2').style.display='block';
+            document.getElementById('pup').style.opacity='1';
+            document.getElementById('pup').style.visibility='visible';">Показать</button>
     </div>
-    <script src="./task 8.4.js"></script>
+    <div id="pup">
+        <div id="block">
+            <button id="but2" onclick="
+                 document.getElementById('but2').style.display='none'; 
+                 document.getElementById('but1').style.display='block';
+                 document.getElementById('pup').style.opacity='0';
+                 document.getElementById('pup').style.visibility='hidden';"><span>&#9746</span></button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea provident velit nam nesciunt neque aliquam
+                molestiae doloremque aspernatur cupiditate, illum veniam debitis ipsum nulla itaque ipsam sit minus
+                aperiam
+                quaerat.</p>
+        </div>
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam delectus nobis vitae quam atque saepe
+            exercitationem aliquid necessitatibus doloremque! Architecto cumque excepturi unde voluptatum optio veniam
+            reiciendis delectus</p>
+    </div>
+
+
 </body>
 
 </html>

@@ -1,0 +1,258 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*firstpage*/
+.firstpage {
+  background-image: url(./img/bg.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 1210px;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation > ul {
+  display: flex;
+  list-style-type: none;
+}
+.icon {
+  padding: 20px;
+}
+.navigation > ul > li {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
+}
+.navigation {
+  padding-right: 20px;
+}
+.firstpage > .contentfirstpage > h1 {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  color: #ffffff;
+}
+.firstpage > .contentfirstpage > .textforfirstpage {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #ffffff;
+}
+.contentfirstpage {
+  display: grid;
+  padding-left: 10%;
+  padding-top: 15%;
+  width: 40%;
+}
+.firstbutton {
+  height: 55px;
+  width: 30%;
+}
+.firstbutton > button {
+  background: #bdae82;
+  border-radius: 0px;
+  padding-left: 60%;
+  padding-right: 60%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+/*page second*/
+.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondpage {
+  background-color: #000000;
+  width: 100%;
+  background-size: 100%;
+}
+.heading > h1 {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+  color: #bdae82;
+}
+.menusecond {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.portfolio__buttons {
+  text-align: center;  
+  width: 50%;  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.portfolio__buttons > button {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  list-style-type: none;
+  text-align: center;
+  color: #bdae82;
+  border: 2px solid #bdae82;
+  border-radius: 0px;
+  padding-left: 10%;
+  padding-right: 10%;  
+  margin-right: 10px;
+  background-color: #000000;
+}
+.portfolio__buttons > button:hover {
+	background: rgba(187, 184, 184, 0.808);
+	color: #b0bfc7;
+	box-shadow: inset 0 0 0 3px #a1aaaf;
+}
+.seasonschoice > ul > li>a{
+  text-decoration: none;
+  color: #BDAE82;
+}
+.menusecond > .seasons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.seasons {
+  padding-top:20px ;
+}
+.seasons > img {
+  padding: 10px;
+}
+.line {
+  height: 2px;
+  width: 350px;
+  background-color: #BDAE82;
+}
+
+
+
+/*Ховер эффекты*/
+.hover-image-5{
+  padding: 10px;
+}
+.hover-image-5 a {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  height: auto;
+  text-align: center;
+  background: #bfe2ff;
+}
+.hover-image-5 a img {
+  opacity: 1;
+  transition: opacity 0.5s;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.hover-image-5 a:hover img {
+  opacity: 0.5;
+}
+.hover-image-5 a div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hover-image-5 a div::before,
+.hover-image-5 a div::after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  content: "";
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  pointer-events: none;
+}
+.hover-image-5 a div::before {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: scale(0, 1);
+}
+.hover-image-5 a div::after {
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: scale(1, 0);
+}
+.hover-image-5 a:hover div::before,
+.hover-image-5 a:hover div::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.hover-image-5 div img,
+.hover-image-5 div i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -24px;
+  margin-left: -24px;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.5s ease 0s;
+  transform: scale(0);
+  font-size: 48px;
+  color: #fff;
+}
+.hover-image-5 a:hover div img,
+.hover-image-5 a:hover div i {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .firstpage {
+    height: auto;
+  }
+  .contentfirstpage{
+    padding-bottom: 24%;
+  }
+   
+  .portfolio__buttons{
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .firstpage {
+    height: auto;
+  }
+  .contentfirstpage{
+    width: 50%;
+  }
+}
+@media (max-width: 768px) and (min-width: 425px){
+  .firstpage {
+    height: auto;
+  }
+  .contentfirstpage{
+    padding-left: 0;
+    width: 50%;
+  }
+}
