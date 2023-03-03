@@ -1,0 +1,171 @@
+1)
+
+Задать объект с полем name.
+
+Задать переменную, которая будет хранить JSON упомянутого объекта.
+
+Задать переменную, которая будет хранить результат парсинга предыдущей переменной.
+
+2)
+
+Создать переменную user, в которой хранится объект.
+
+Записать переменную в localStorage.
+
+Создать переменную newUser, в которой будет храниться JS объект из localStorage.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./task 9.2.js"></script>
+</body>
+</html>
+
+//1)
+
+//Задать объект с полем name.
+
+//Задать переменную, которая будет хранить JSON упомянутого объекта.
+
+//Задать переменную, которая будет хранить результат парсинга предыдущей переменной.
+
+let student = {
+    name: 'John'
+};
+let remember = JSON.stringify(student);
+remember = JSON.parse(remember);
+
+//2)//
+
+//Создать переменную user, в которой хранится объект.//
+
+//Записать переменную в localStorage.//
+
+//Создать переменную newUser, в которой будет храниться JS объект из localStorage//
+let user = {
+    namber: 1
+};
+localStorage.setItem('user', JSON.stringify(user));
+let newUser = localStorage.getItem('user');
+
+
+Задание 3
+
+Разместить на странице несколько картинок. При клике на любую картинку она плавно становится на бэкграунд всей страницы, а тег картинки получает уникальные css-свойства (чтобы было понятно, что сейчас эта картинка является выбранным элементом). При перезагрузке страницы последнее выбранное состояние должно сохраниться, реализовать через LocalStorage.
+
+Пример реализации:
+
+https://ucarecdn.com/6e689f37-1e6a-4ba1-b9b4-461d9cb4f661/jsbackgallery
+
+ПОДСКАЗКИ
+
+- значение атрибута можно узнать с помощью метода *element.getAttribute(' ');*
+
+- элемент, по которому пришелся клик, =
+
+*event.target*
+
+остальные элементы -
+
+*!event.target*
+
+Порядок работы, если нет своих идей:
+
+1. Собираем изображения в массив.
+
+2. Перебираем массив с изображениями, добавляем на них обработчик клика.
+
+Внутри обработчика еще раз перебираем массив, проверяем, какая именно картинка является нажатой (на нее пришелся клик - event.target). У остальных убираем класс active, а ей добавляем, записываем ее индекс или url в память и ставим ее на фон body.
+
+При загрузке страницы проверяем, есть ли информация об активной картинке в LocalStorage, если есть - добавляем ей класс active и ставим ее на фон. Если нет - можно присвоить класс и поставить на фон первую картинку.
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='./task 9.3.css' />
+    <script src="./task 9.3.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menu">
+    <div id="img1" >
+        <img src="./img/i (1).webp">
+    </div>
+    <div id="img2">
+        <img src="./img/i (2).webp">
+    </div>
+    <div id="img3">
+        <img src="./img/i (3).webp">
+    </div>
+</div>
+    
+</body>
+
+</html>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    background-position: center center;      
+    background-repeat: no-repeat;      
+    background-attachment: fixed; 
+  width: 100%;
+  transition: 1s;
+
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1300px;
+}
+.menu > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.menu > div > img {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+let img1 = document.getElementById('img1');
+let img2 = document.getElementById('img2');
+let img3 = document.getElementById('img3');
+
+img1.addEventListener('click', () => {
+    document.body.style.background = 'url("./img/i (1).webp")';
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = 'cover'
+    document.body.style.backgroundPosition = ' center center'
+});
+
+img2.addEventListener('click', () => {
+    document.body.style.background = 'url("./img/i (2).webp")';
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = 'cover'
+    document.body.style.backgroundPosition = '  center center'
+});
+
+img3.addEventListener('click', () => {
+    document.body.style.background = 'url("./img/i (3).webp")';
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = '100%'
+    document.body.style.backgroundPosition = ' center center'
+});
