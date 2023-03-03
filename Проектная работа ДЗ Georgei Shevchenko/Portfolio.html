@@ -27,16 +27,22 @@
                 <div class="icon">
                     <img src="./img/logo 1.svg">
                 </div>
-                <div class="navigation">
-                    <ul>
-                        <li>Skills</li>
-                        <li>Portfolio</li>
-                        <li>Video</li>
-                        <li>Price</li>
-                        <li>Contacts</li>
-                        <li>en /</li>
-                        <li>ru</li>
-                    </ul>
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <div class="menu__box">
+                        <ul>
+                            <li><a class="menu__item" href="#">Skills</a></li>
+                            <li><a class="menu__item" href="#">Portfolio</a></li>
+                            <li><a class="menu__item" href="#">Video</a></li>
+                            <li><a class="menu__item" href="#">Price</a></li>
+                            <li><a class="menu__item" href="#">Contacts</a></li>
+                            <li><a class="menu__item" href="#">en /</a></li>
+                            <li><a class="menu__item" href="#">ru</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -45,7 +51,23 @@
             <p class="textforfirstpage">Save sincere emotions, romantic feelings and happy moments of life together with
                 professional photographer Alexa Rise</p>
             <div class="firstbutton">
-                <button>Hire me</button>
+                <button id='butt' onclick=" 
+                document.getElementById('butt').style.display='block';
+                document.getElementById('pup').style.opacity='1';
+                document.getElementById('pup').style.visibility='visible';">Hire me</button>
+            </div>
+            <div id="pup">
+                <button class="close" onclick=" document.getElementById('pup').style.opacity='0';
+                document.getElementById('pup').style.visibility='hidden';"><span>&#10006;</span></button>
+                <div class="contentpup">
+                <h1>Contact me</h1>
+                <p class="E-mail"><input placeholder="E-mail"></p>
+                <p class="Phone"><input placeholder="Phone"></p>
+                <p class="Message"><input class="lastInput" placeholder="Message"></p>
+                <div class="sendMessage">
+                <button class="message">Send message</button>
+            </div>
+            </div>
             </div>
         </div>
     </main>
@@ -58,12 +80,12 @@
                 <hr class="line">
             </div>
             <div class="menusecond">
-                <div class = "portfolio__buttons">
-                <button class="portfolio__btn"> Winter</button>
-                <button class="portfolio__btn"> Spring</button>
-                <button class="portfolio__btn"> Summer</button>
-                <button class="portfolio__btn"> Autumn</button>
-            </div>
+                <div class="portfolio__buttons">
+                    <button class="portfolio__btn"> Winter</button>
+                    <button class="portfolio__btn"> Spring</button>
+                    <button class="portfolio__btn"> Summer</button>
+                    <button class="portfolio__btn"> Autumn</button>
+                </div>
                 <div class="seasons">
                     <div class="hover-image-5">
                         <a href="https://avatars.mds.yandex.net/get-images-cbir/9431584/LENRKATySwS1ChHVe6h5bw8590/ocr">

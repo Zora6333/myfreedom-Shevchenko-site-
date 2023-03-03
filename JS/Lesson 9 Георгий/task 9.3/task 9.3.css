@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    background-position: center center;      
+    background-repeat: no-repeat;      
+    background-attachment: fixed; 
+  width: 100%;
+  transition: 1s;
+
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1300px;
+}
+.menu > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.menu > div > img {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
