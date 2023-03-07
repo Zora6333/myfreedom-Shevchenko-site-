@@ -10,20 +10,6 @@
 
 [{title: 'Green', address:  'ул. Петра Мстиславца 11, Минск'},{title: 'ProStore', address:  'пр-т Дзержинского, 126, Минск'}]*/
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./task 12.1.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
 function Shop(name, address) {
     this.name = name,
     this.address = address
@@ -38,23 +24,6 @@ console.log(shops)
 2) С помощью метода map получить массив, в котором будут содержаться только адреса магазинов. То есть:
 
 ['ул. Петра Мстиславца 11, Минск', 'пр-т Дзержинского, 126, Минск']
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./task 12.2.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
-
 
 function Shop(name, address) {
     this.name = name,

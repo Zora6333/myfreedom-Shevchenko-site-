@@ -8,5 +8,4 @@ function makeCounter(){
 }
 alert( counter1() ); 
 alert( counter1() ); 
-
 alert( counter2() )

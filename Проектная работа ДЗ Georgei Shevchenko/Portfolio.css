@@ -268,7 +268,7 @@
 .seasons {
   padding-top: 20px;
 }
-.seasons > img {
+.seasons > .hover-image-5> img {
   padding: 10px;
 }
 .line {
@@ -278,6 +278,9 @@
 }
 
 /*Ховер эффекты*/
+
+
+
 .hover-image-5 {
   padding: 10px;
 }

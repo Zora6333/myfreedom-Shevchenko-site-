@@ -1,6 +1,11 @@
-   let x = prompt('Введите число')
-   function makeCalculator(){
-  i = x * 2 
-  alert(i)
+function makeCounter() {
+  var currentCount = 155;
+
+  return function() {
+    return currentCount*2;
+  };
 }
-makeCalculator()
+var counter = makeCounter(); 
+
+
+alert( counter() );

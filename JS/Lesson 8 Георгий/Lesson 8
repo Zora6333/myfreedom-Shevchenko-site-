@@ -1,10 +1,15 @@
 //1. Написать функцию makeCalculator, которая принимает число x и возвращает функцию, которая возвращает произведение x на 2.//
-   let x = prompt('Введите число')
-   function makeCalculator(){
-  i = x * 2 
-  alert(i)
+function makeCounter() {
+  var currentCount = 155;
+
+  return function() {
+    return currentCount*2;
+  };
 }
-makeCalculator()
+var counter = makeCounter(); 
+
+
+alert( counter() );
 //2. Написать функцию makeCounter, которая возвращает функцию, внутри которой увеличивается сохраненный каким-то образом ранее счетчик.//
 let counter1 = makeCounter(); 
 let counter2 = makeCounter();
@@ -16,18 +21,21 @@ function makeCounter(){
 }
 alert( counter1() ); 
 alert( counter1() ); 
-
 alert( counter2() )
 
 //3. Написать функцию startsWith, которая принимает 2 строки и проверяет, начинается ли первая строка с символов второй строки. Функция возвращает true или false.//
-let X = prompt('Введите строку');
-let Y = prompt('Введите строку');
-function startsWith() {
-    if ((X[1]) === (Y[1])) {
-        alert('true')
-    } else { alert('false')}
-}
-startsWith()
+
+function ver (){
+var haystack = prompt('Введите');
+var needle = prompt('Введите');
+
+if(haystack.startsWith(needle)) {
+    alert(true)
+} else {
+    alert(false)
+}}
+ver()
+
 //4* Реализовать функционал модального окошка, которое открывается с затемнением фона при нажатии на кнопку и закрывается по нажатию на кнопку-крестик или на тёмную область вокруг окошка.//
               4---- НЕПОЛУЧАЕТСЯ ЗАТЕМНЕНИЕ ПРИ ОТКРЫТИИ
 <!DOCTYPE html>
@@ -42,14 +50,9 @@ startsWith()
 </head>
 
 <body>
-    <button id="but1"
-        onclick="document.getElementById('block').style.display='block'; document.getElementById('but1').style.display='none'; document.getElementById('but2').style.display='block';"
-        style="display:none;">Показать</button>
-
-
+    <button id="but1">Показать</button>
     <div id="block">
-        <button id="but2"
-            onclick=" document.getElementById('block').style.display='none'; document.getElementById('but2').style.display='none'; document.getElementById('but1').style.display='block';"><span>&#9746</span></button>
+        <button id="but2"><span>&#9746</span></button>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea provident velit nam nesciunt neque aliquam
             molestiae doloremque aspernatur cupiditate, illum veniam debitis ipsum nulla itaque ipsam sit minus aperiam
             quaerat.</p>
@@ -76,18 +79,26 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
+#pup {
+  width: 100%;
+  height: 1400px;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  background: rgba(129, 173, 190, 0.9);
+}
+
 #block {
-    position: fixed;
-	top: 20%;
-	left: 50%;
-	padding: 20px;
-	width: 360px;
-	margin-left: -200px;	
-	background: #965a5a;
-	border: 1px solid orange;
-	border-radius: 4px; 
-	z-index: 99999;
-	opacity: 1;	
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  padding: 20px;
+  width: 360px;
+  margin-left: -200px;
+  background: #965a5a;
+  border: 1px solid orange;
+  border-radius: 4px;
+  z-index: 99999;
 }
 #but2 {
   position: absolute;
@@ -99,17 +110,46 @@ body {
   background: #fff;
   color: black;
 }
+.conteiner {
+  content: "";
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 9999;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  font-size: 50px;
+}
 
 
 let but = document.getElementById('but1')
-
- 
- window.addEventListener("load",function() { changeBackground('red') });
-
-function changeBackground(color) {
-    
-    if(document.getElementById('but2').style.display='block'){
-    document.body.style.background = color;} else{
-        none
-    }
- }
+let but2 = document.getElementById('but2')
+let pupe = document.getElementById('pup')
+let  block = document.getElementById('block')
+but.onclick = function ClickBut1() {
+    document.getElementById('but1').style.display = 'none';
+    document.getElementById('but2').style.display = 'block';
+    document.getElementById('pup').style.opacity = '1';
+    document.getElementById('pup').style.visibility = 'visible';
+}
+but2.onclick = function ClickBut2() {
+    document.getElementById('but2').style.display = 'none';
+    document.getElementById('but1').style.display = 'block';
+    document.getElementById('pup').style.opacity = '0';
+    document.getElementById('pup').style.visibility = 'hidden';
+}
+pupe.onclick = function ClickPupe() {
+    document.getElementById('but2').style.display = 'none';
+    document.getElementById('but1').style.display = 'block';
+    document.getElementById('pup').style.opacity = '0';
+    document.getElementById('pup').style.visibility = 'hidden';
+}

@@ -1,22 +1,6 @@
 /*Задание 1
 
 Задать массив имен. Создать 2 переменные, которые будут хранить первых 2 имени, вывести их в консоль. Создать массив, который будет хранить остальные имена, вывести имена из него по одному в консоль. Если кол-во элементов остаточного массива меньше 2, то вторая переменная должна стать равна "alex".*/
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='./task 11.1.css' />
-    <script src="./task 11.1.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    
-
-    
-</body>
-</html>
 
 let rel = ['Оля','Даша','Вова','Дима'];
 let X =(rel[0],rel[1])
@@ -34,20 +18,6 @@ ShowName(...rel)
 
 Задать массив имен. Задать функцию, которая принимает 3 параметра и выводит их в консоль. Передать массив в функцию. Внутри функции каждый параметр должен быть равен одному из элементов массива.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./task 11.2.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
 let arr = ['Аня','Маша','Рома','Ваня','Петя','Гриша']
 function ShowName(firstname,secondname,thirdname){
 console.log(firstname)
@@ -59,21 +29,7 @@ ShowName(...arr)
 Задание 3
 
 Задать объект с N полей. Создать 2 переменные, которые будут называться так же, как поля, и хранить 2 значения полей объекта. Если соответствующих полей в объекте нет, задать значения чисел 1 и 2. Все остальные поля объекта записать в переменную fields.
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./task 11.3.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>      
-
+   
 let name = 'Ваня';
 let age = 6;
 let obj = {

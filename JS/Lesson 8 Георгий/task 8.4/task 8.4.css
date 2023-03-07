@@ -20,8 +20,9 @@ body {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  background: rgba(0, 170, 238, 0.9);
+  background: rgba(129, 173, 190, 0.9);
 }
+
 #block {
   position: fixed;
   top: 20%;
