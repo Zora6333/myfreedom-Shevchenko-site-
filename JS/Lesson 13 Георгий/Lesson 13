@@ -1,0 +1,202 @@
+Задание 1
+
+Реализовать следующее мини-приложение
+
+https://gist.github.com/zhekix
+
+class Logo {
+    constructor(url) {
+        this.top = 0;
+        this.left = 0;
+        this.width = 200;
+        this.imgUrl = url;
+        this.html = null;
+    }
+
+    init() {
+        const img = document.createElement('img');
+        img.src = this.imgUrl;
+        this.html = img;
+        this.render();
+        document.body.style.backgroundColor = 'black';
+        img.style.position = 'fixed';
+        document.body.appendChild(img);
+    }
+
+    render() {
+        this.html.style.top = `${this.top}px`;
+        this.html.style.left = `${this.left}px`;
+        this.html.style.width = `${this.width}px`;
+    }
+
+    moveUp() {
+        this.top -= 20;
+        this.render();
+    }
+
+    moveDown() {
+        this.top += 20;
+        this.render();
+    }
+
+    moveLeft() {
+        this.left -= 20;
+        this.render();
+    };
+
+    moveRight() {
+        this.left += 20;
+        this.render();
+    }
+}
+
+const imgUrl = 'https://bit.ly/2tcDito';
+const mfLogotip = new Logo(imgUrl);
+console.log(mfLogotip);
+
+
+mfLogotip.init();
+
+
+Задание 2
+
+Добавить к приложению желтый круг (пример ЗДЕСЬ)
+
+Реализовать с помощью класса Circle, который принимает аргументы size (ширина и высота фигуры), color (цвет фигуры). При вызове метода render() из экземпляра класса Circle должен отрисоваться круг с заданными стилями.
+
+Сделать по примеру из последнего видео в уроке.
+
+
+class Logo {
+    constructor(url) {
+        this.top = 0;
+        this.left = 0;
+        this.width = 200;
+        this.imgUrl = url;
+        this.html = null;
+    };
+
+    init() {
+        const img = document.createElement('img'); // метод должен создать тег img 
+        img.src = this.imgUrl;// вложить в него src картинки (this.imgUrl)
+        this.html = img; // и записать в this.html
+        this.render();// + дергаем render
+        document.body.style.backgroundColor = 'Black';// + странице должен залится фон черным
+        img.style.position = 'fixed';  // применить фиксированное позиционирование 
+        document.body.appendChild(img);     // метод должен отрисовать изображение (this.html) на странице
+
+    };
+
+    render() {
+        this.html.style.top = `${this.top}px`
+        this.html.style.left = `${this.left}px`
+        this.html.style.width = `${this.width}px`
+
+    };
+
+    moveUp() {
+        this.top -= 20
+        this.render()
+    };
+
+    moveDown() {
+        this.top += 20
+        this.render()
+    };
+
+    moveLeft() {
+        this.left -= 20;
+        this.render();
+    };
+
+    moveRight() {
+        this.left += 20;
+        this.render();
+    };
+};
+
+class Circle {
+    constructor(color, size) {
+        this.height = size;
+        this.color = color;
+        this.width = size;
+        this.html = null;
+    };
+
+    init() {
+        const circle = document.createElement('div'); // метод должен создать тег img 
+        document.body.appendChild(circle);     // метод должен отрисовать изображение (this.html) на странице
+        this.html = circle; // и записать в this.html
+        circle.style.backgroundColor = this.color
+        this.render();// + дергаем render
+        circle.style.borderRadius = '50%'
+        document.body.style.backgroundColor = 'Black';// + странице должен залится фон черным
+        circle.style.position = 'fixed';  // применить фиксированное позиционирование 
+
+    };
+
+    render() {
+        this.html.style.height = `${this.height}px`
+        this.html.style.color = `${this.color}`
+        this.html.style.width = `${this.width}px`
+    };
+
+    moveUp() {
+        this.height += 20
+        this.render()
+    };
+
+    moveDown() {
+        this.height -= 20
+        this.render()
+    };
+
+    moveminWidth() {
+        this.width -= 20;
+        this.render();
+    };
+
+    moveWidth() {
+        this.width += 20;
+        this.render();
+    };
+
+    moveWidth() {
+        this.width -= 20;
+        this.render();
+    };
+
+};
+const imgUrl = 'https://bit.ly/2tcDito';
+const mfLogotip = new Logo(imgUrl);
+const mfCircletip = new Circle('#FFFF00', 300);
+
+// запускаем наше микро-приложение
+mfLogotip.init();
+mfCircletip.init();
+
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfLogotip.moveRight();
+mfCircletip.moveWidth()
+mfCircletip.moveWidth()
+mfCircletip.moveWidth()
+mfCircletip.moveWidth()
+mfCircletip.moveUp()
+mfCircletip.moveUp()
+mfCircletip.moveUp()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
+mfCircletip. moveDown()
