@@ -1,0 +1,22 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tabs button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  .tabs button.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    display: none;
+  }

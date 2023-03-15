@@ -1,0 +1,386 @@
+Задание 1
+
+Реализовать переключение блоков с помощью табов.
+
+Пример результата:
+
+https://ucarecdn.com
+
+ПОРЯДОК РАБОТЫ
+
+1. Подготовить верстку. https://youtu.be/mnfBHvNm_z8
+
+2. Создаем переменные и собираем в коллекции все кнопки и все блоки с контентом.
+
+3. Перебираем все кнопки и вешаем на них обработчик клика. При клике запускается функция openTab, в нее передаем 2 параметра - event и id блока (id блока = дополненный id кнопки, по которой пришелся клик).
+
+4. Описываем функцию openTab, которая показывает блок. Она принимает два параметра - event и id (событие - нужно для определения кнопки, по которой пришелся клик, и id - нужно для определения нужного блока). Внутри этой функции:- перебираем все кнопки и убираем у них класс active (используем forEach и стрелочный синтаксис)- перебираем все блоки и скрываем их (используем forEach и стрелочный синтаксис)
+
+- определяем кнопку, по которой кликнули (event.target) и добавляем ей класс active. Находим по id блок, связанный с активной кнопкой, и показываем его.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='./task 14.1.css' />
+    <script src="./task 14.1.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tabs">
+        <div class="tab-buttons">
+          <button id="tab1">Tab 1</button>
+          <button id="tab2">Tab 2</button>
+          <button id="tab3">Tab 3</button>
+        </div>
+        <div class="tab-contents">
+          <div class="tab-content" id="tab1-content">
+            <h2>Tab 1 Content</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse nisi autem ipsa asperiores obcaecati fuga commodi, magnam mollitia sapiente cum illum nesciunt sed voluptatum eum eaque corporis. Asperiores, magnam obcaecati.</p>
+          </div>
+          <div class="tab-content" id="tab2-content">
+            <h2>Tab 2 Content</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates doloremque temporibus libero aliquid ex soluta! Aut expedita ad eos quas consectetur autem quae eveniet et nostrum. Ab, nam facere.</p>
+          </div>
+          <div class="tab-content" id="tab3-content">
+            <h2>Tab 3 Content</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam laudantium at, ea nobis unde ipsa odit enim assumenda cum veritatis voluptas totam eaque aliquam reiciendis ab sed id vero.</p>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tabs button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  .tabs button.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+
+  
+const tabs = document.querySelector('.tabs');
+const buttons = tabs.querySelectorAll('button');
+const contents = tabs.querySelectorAll('.tab-content');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    openTab(event, button.id + '-content');
+  });
+});
+
+function openTab(event, id) {
+  buttons.forEach((button) => {
+    button.classList.remove('active');
+  });
+
+  contents.forEach((content) => {
+    content.style.display = 'none';
+  });
+
+  const clickedButton = event.target;
+  clickedButton.classList.add('active');
+
+  const clickedContent = tabs.querySelector('#' + id);
+  if (clickedContent) {
+    clickedContent.style.display = 'block';
+  }
+}
+
+Задание 2
+
+Сверстать любую простую страничку и реализовать смену темы.
+
+В шапке делаем кнопку «Тёмная тема», при нажатии этой кнопки странице присваивается доп. класс (напр. dark-theme) и начинают работать стили тёмной темы. Сама кнопка меняется на «Светлая тема», при нажатии которой доп. класс со страницы удаляется.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./task 14.2.css">
+    <script src="./task 14.2.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar"><a>Главная</a>|<a>Контакты</a>|<a>О сайте</a></nav>
+    <div class="container">
+        <div>
+            <input type="button" value="Toggle" id="toggle-theme" />
+        </div>
+        <h2 class="title">Заголовок</h2>
+        <p class="content">Основное содержимое...</p>
+    </div>
+    <footer>
+        <p>Все права разрешены ©2022</p>
+    </footer>
+</body>
+
+</html>
+
+:root{
+    --panel-bg-color: #dfe4ea;
+    --container-bg-color: #f1f2f6;
+    --text-color: #2f3542;
+  }
+  :root[theme='dark'] {
+    --panel-bg-color: #2f3542;
+    --container-bg-color: #57606f;
+    --text-color: #ced6e0;
+  }
+  * {
+    margin: 0;
+  }
+  html{
+    height: 100%;
+  }
+  body{
+    height: 100%;
+    font-family: Verdana;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+  }
+  nav{
+    padding: 1.2rem;
+    background: var(--panel-bg-color);
+  }
+  nav a{
+    padding: 1.1rem;
+  }
+  .container{
+    flex: 1;
+    padding: 1rem;
+    background: var(--container-bg-color);
+  }
+  footer{
+    padding: 1rem;
+    background: var(--panel-bg-color);
+  }
+  input[type=button] {
+    color: var(--text-color);
+    background: var(--panel-bg-color);
+  
+    padding: 0.3rem;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    init()
+  })
+  function init() {
+    if(localStorage.getItem('theme')) {
+      document.documentElement.setAttribute("theme", "dark");
+    }
+    else {
+      document.documentElement.removeAttribute("theme");
+    }
+    
+  }
+  const toggleBtn = document.querySelector("#toggle-theme");
+  toggleBtn.addEventListener("click", function() {
+    if(document.documentElement.hasAttribute("theme")){
+      document.documentElement.removeAttribute("theme");
+      localStorage.removeItem('theme');
+    }
+    else{
+      document.documentElement.setAttribute("theme", "dark");
+      localStorage.setItem('theme', 1);
+    }
+  });
+
+  Задание 3
+
+3.1. Цифровые часы
+
+Создать виджет-часы, как в примере ЗДЕСЬ.
+
+Вам понадобится каждую секунду (через setInterval) запускать функцию, которая будет забирать время из объекта Date и выводить в разметку. Цвета и т.п. прописать в CSS.
+
+3.2. Аналоговые часы (по желанию)
+
+Создать виджет-часы, как в примере ЗДЕСЬ.
+
+ЗДЕСЬ видео, посмотрите его, чтобы понимать, как делать. Суть в том, что поворачиваться будут квадраты-обертки, а стрелки просто находятся внутри: см. ЗДЕСЬ.
+
+Дизайн - на свое усмотрение, изображение-циферблат можно взять ЗДЕСЬ.
+
+Почитайте про соотношение скорости движения стрелок и градусов поворота ЗДЕСЬ.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./task 14.3.css">
+    <script src="./task 14.3.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock1"></div>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+#clock1{
+    color: #0071D0;
+ font-weight: bold;
+  font-size: 20px;
+  padding-right: 20%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+}
+
+.clock{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://antonaniskovich.ru/filearticle/chasy-na-javascript/file/clock.png),
+    url(https://antonaniskovich.ru/images/javascript/2020/2020-03-21-chasy-na-javascript/file/js.png),
+    radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9,25,33,1) 38%);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+    inset 0 -15px 15px #191919,
+    0 15px 15px rgba(134, 134, 134, 0.35),
+    inset 0 15px 15px #191919
+    ;
+}
+
+.clock:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+
+.clock .hour, .hr{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc{
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: #ffc600;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.mn:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #fff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.sc:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background-color: #fff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+window.onload = function () {
+    window.setInterval(function () {
+        var now = new Date();
+        var clock = document.getElementById("clock1");
+        clock.innerHTML = now.toLocaleTimeString();
+    }, 1000);
+};
+
+const deg = 6;
+const hr = document.querySelector('#hr');
+const mn = document.querySelector('#mn');
+const sc = document.querySelector('#sc');
+
+setInterval(() => {
+  const now = new Date();
+  let hh = now.getHours() * 30;
+  let mm = now.getMinutes() * deg;
+  let ss = now.getSeconds() * deg;
+
+  hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+  mn.style.transform = `rotateZ(${mm}deg)`;
+  sc.style.transform = `rotateZ(${ss}deg)`;
+}, 1000);
+
