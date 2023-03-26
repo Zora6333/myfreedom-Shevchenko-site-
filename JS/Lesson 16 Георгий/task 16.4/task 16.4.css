@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#widget {
+    max-width: 500px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+#current {
+    min-height: 100px;
+    background-color: #89ddd0ff;
+}
+
+#forecast {
+    min-height: 100px;
+
+    background-color: #e8e8e8ff;
+}
