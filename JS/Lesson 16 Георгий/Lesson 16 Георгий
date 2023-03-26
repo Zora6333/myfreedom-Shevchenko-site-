@@ -1,0 +1,149 @@
+Задание 1
+
+По данному url расположена задача:
+
+*https://jsonplaceholder.typicode.com/todos/1*
+
+В html предусмотреть <div></div>Достать с сервера заголовок задачи и отобразить его в div.
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(data => {
+    const taskTitle = data.title;
+    document.getElementById('task-title').textContent = taskTitle;
+});
+
+
+Задание 2
+
+Запросом на сервер по url *https://jsonplaceholder.typicode.com/todos* достать задачи.
+
+Отобразить первые 20 задач списком ul на странице. Содержимое каждого li - поле title объекта задачи.
+
+fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(data => {
+        const taskList = document.getElementById('task-list');
+        const tasks = data.slice(0, 20); // получаем первые 20 задач
+
+        // создаем элементы списка и добавляем их в ul
+        tasks.forEach(task => {
+            const taskItem = document.createElement('li');
+            taskItem.textContent = task.title;
+            taskList.appendChild(taskItem);
+        });
+    });
+
+    Задание 4
+
+Отобразить на странице 10 первых комментариев с сервера *https://jsonplaceholder.typicode.com/comments*
+
+Оформить тегами как в [ПРИМЕРЕ](https://ucarecdn.com/f9cf39fd-9f6d-409f-8dd4-51e416480bdc/ScreenshotatNov30170836.png).
+
+Порядок работы:
+
+1) записать в переменную блок для отрисовки результата.
+
+2) описать функцию отрисовки результата (напр. addInfo). Функция принимает 3 параметра - тег, содержимое и название класса для CSS. Она создает тег, наполняет его текстом, добавляет класс и помещает в блок на страницу.
+
+3) создать http-запрос и получить результат в виде массива объектов (через JSON.parse). Записать этот результат в переменную, т.к. с ним будем дальше работать.
+
+4) внутри функции .onload:
+
+- обойти через цикл первые 10 элементов массива
+
+- вызвать функцию addInfo 3 раза: для добавления на страницу имени, имейла и комментария.
+
+5) прописать CSS для классов.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./task 16.3.css">
+  <script src="./task 16.3.js" defer></script>
+  <title>JSON Placeholder comments</title>
+</head>
+<body>
+  <div id="result"></div>
+</body>
+</html>
+
+
+//CSS//
+ .comment {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .name {
+      font-weight: bold;
+    }
+    .email {
+      color: #999;
+    }
+    .body {
+      margin-top: 10px;
+    }
+
+    //JS//
+
+    const result = document.getElementById('result');
+
+function addInfo(tag, content, className) {
+  const element = document.createElement(tag);
+  element.textContent = content;
+  element.classList.add(className);
+  result.appendChild(element);
+}
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/comments');
+xhr.onload = function() {
+  const comments = JSON.parse(xhr.response).slice(0, 10);
+  for (const comment of comments) {
+    addInfo('div', '', 'comment');
+    addInfo('div', comment.name, 'name');
+    addInfo('div', comment.email, 'email');
+    addInfo('div', comment.body, 'body');
+  }
+}
+xhr.send();
+
+Задание 5
+
+Создать собственный погодный виджет на основе данных с сервера погоды.
+
+Оформить, как в примере: [ЗДЕСЬ](https://ucarecdn.com/f15529fb-d05d-47bd-b617-c517db0611f2/weather2.png).
+
+Документация: [https://openweathermap.org/api...](https://openweathermap.org/api/hourly-forecast)
+
+*Порядок работы:*
+
+1) Проверить, работает ли API-ключ, данный в примере. Для этого открыть url [https://api.openweathermap.org...](https://api.openweathermap.org/data/2.5/forecast?q=Minsk&appid=a94d0a5ac08570add4b47b8da933f247)
+
+Если данные отображаются - можно не получать свой ключ, иначе см. п. 1.1.
+
+1.1. Зарегистрироваться и получить собственный API-ключ на сайте [https://home.openweathermap.or...](https://home.openweathermap.org/)
+
+2) Создать html-css разметку под данные.
+
+- общий блок для виджета, внутри него два блока - для текущей погоды и для прогноза (пример см. [ЗДЕСЬ](https://ucarecdn.com/477e6959-b37e-4555-a81c-3b707858b199/layout.png))
+
+- внутри нижней части виджета через js будут добавляться строки по дням - это дивы, им нужно сразу прописать стили (flex-распределение вставляемых элементов, нижняя граница).
+
+3) Написать JS с HTTP-запросом на url.
+
+- кастомизировать url запроса: указать нужный город, добавить в url параметр отображения градусов по Цельсию (см. на странице документации раздел *Units of measurement*)
+
+4) добавить информацию из ответа в виджет на страницу.
+
+- в верхней части виджета отобразить город и дату (из полученного JSON-объекта).
+
+Возможно, текущую дату проще получить из встроенной функции Date, примеры работы с ней [ЗДЕСЬ](https://itchief.ru/javascript/date).
+
+- из JSON-объекта "достать" текущую погоду (.list[0]) - первый объект внутри массива.
+
+Как узнать url иконки: [https://openweathermap.org/wea...](https://openweathermap.org/weather-conditions#How-to-get-icon-URL)
+
+- в нижней части добавить необходимую информацию через цикл. Вам понадобится каждый 8-й объект, т.к в ответе приходит погода на каждые 3 часа (8 раз в сутки), а нам нужна погода 1 раз в сутки.

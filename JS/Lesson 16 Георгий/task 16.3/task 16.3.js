@@ -1,13 +1,21 @@
-fetch('https://ucarecdn.com/f9cf39fd-9f6d-409f-8dd4-51e416480bdc/ScreenshotatNov30170836.png')
-.then(response => response.json())
-.then(data => {
-   const contentBlock = document.querySelector('.contentBlock')
-   const tasks = data.slice(0, 20);
-  
-   unction addInfo(tagName, textContent, className) {
-      const tag = document.createElement(tagName);
-      tag.textContent = textContent;
-      tag.classList.add(className);
-      resultBlock.appendChild(tag);
-    }
-});
+const result = document.getElementById('result');
+
+function addInfo(tag, content, className) {
+  const element = document.createElement(tag);
+  element.textContent = content;
+  element.classList.add(className);
+  result.appendChild(element);
+}
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/comments');
+xhr.onload = function() {
+  const comments = JSON.parse(xhr.response).slice(0, 10);
+  for (const comment of comments) {
+    addInfo('div', '', 'comment');
+    addInfo('div', comment.name, 'name');
+    addInfo('div', comment.email, 'email');
+    addInfo('div', comment.body, 'body');
+  }
+}
+xhr.send();
