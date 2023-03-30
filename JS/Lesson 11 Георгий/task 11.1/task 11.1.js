@@ -1,12 +1,16 @@
-let rel = ['Оля','Даша','Вова','Дима'];
-let X =(rel[0],rel[1])
-let Y =(rel[0],rel[1])
-function ShowName(X,Y,...rest){
 
+const names = ['Alice', 'Bob', 'Charlie', 'Dave', 'Emily', 'Frank'];
+let firstName = names[0];
+let secondName = names[1];
+console.log(firstName);
+console.log(secondName);
 
-            console.log(rest[0])
-            console.log(rest[1])
+const otherNames = names.slice(2);
+
+for (const name of otherNames) {
+  console.log(name);
 }
 
-ShowName(...rel)
-
+if (otherNames.length < 2) {
+  secondName = 'alex';
+}

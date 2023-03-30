@@ -1,29 +1,110 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Стили для всего виджета */
+.weather-widget {
+  padding: 20px;
+  border: 1px solid rgb(1, 231, 231);
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Стили для текущей погоды */
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px;
+  height: 500px;
+  margin-bottom: 20px;
+  background-color: aqua;
+}
+.current-weather #city{
+padding-bottom: 300px;
+}
+.current-weather #date{
+  margin-right: 200px;
+  }
+.current-weather .temperature {
+  font-size: 50px;
+  font-weight: bold;
+  color: #000000;
+  padding-top: 50px;
 }
 
-#widget {
-    max-width: 500px;
-    width: 100%;
-    padding: 0 15px;
+.current-weather .description {
+  font-size: 24px;
+  color: #666666;
 }
 
-#current {
-    min-height: 100px;
-    background-color: #89ddd0ff;
+/* Стили для прогнозов */
+.forecast h2{
+  display: flex;
+  justify-content: center;
 }
 
-#forecast {
-    min-height: 100px;
 
-    background-color: #e8e8e8ff;
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(1, 231, 231);
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.forecast-item .date {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  padding-right: 50%;
+}
+
+.forecast-item .temperature {
+  font-size: 24px;
+  color: #666666;
+  padding-left: 50%;
+}
+.forecast-item img{
+  display: flex;
+  align-items: center;
+}
+.forecast-item .description {
+  font-size: 18px;
+  color: #666666;
+}
+
+/* Стили для иконок погоды */
+.weather-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.weather-icon.sun {
+  background-image: url('https://yourdomain.com/01d.png');
+}
+
+.weather-icon.cloud {
+  background-image: url('https://yourdomain.com/03d.png');
+}
+
+.weather-icon.rain {
+  background-image: url('https://yourdomain.com/09d.png');
+}
+
+.weather-icon.thunderstorm {
+  background-image: url('https://yourdomain.com/11d.png');
+}
+
+.weather-icon.snow {
+  background-image: url('https://yourdomain.com/13d.png');
+}
+
+.weather-icon.fog {
+  background-image: url('https://yourdomain.com/50d.png');
 }

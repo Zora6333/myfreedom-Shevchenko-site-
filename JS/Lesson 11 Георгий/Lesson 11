@@ -2,17 +2,21 @@
 
 Задать массив имен. Создать 2 переменные, которые будут хранить первых 2 имени, вывести их в консоль. Создать массив, который будет хранить остальные имена, вывести имена из него по одному в консоль. Если кол-во элементов остаточного массива меньше 2, то вторая переменная должна стать равна "alex".*/
 
-let rel = ['Оля','Даша','Вова','Дима'];
-let X =(rel[0],rel[1])
-let Y =(rel[0],rel[1])
-function ShowName(X,Y,...rest){
+const names = ['Alice', 'Bob', 'Charlie', 'Dave', 'Emily', 'Frank'];
+let firstName = names[0];
+let secondName = names[1];
+console.log(firstName);
+console.log(secondName);
 
+const otherNames = names.slice(2);
 
-            console.log(rest[0])
-            console.log(rest[1])
+for (const name of otherNames) {
+  console.log(name);
 }
 
-ShowName(...rel)
+if (otherNames.length < 2) {
+  secondName = 'alex';
+}
 
 Задание 2
 

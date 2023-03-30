@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./task 16.4.css">
     <script src="./task 16.4.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div id="widget">
-        <div id="current">
-
-        </div>
-        <div id="forecast">
-            
-        </div>
+  <div class="weather-widget">
+    <div class="current-weather">
+      <h2 id="city"></h2>
+      <p id="date"></p>
+      <p class="temperature"></p>
+      <p class="description"></p>
     </div>
+    <div class="forecast">
+      <h2>5-Day Forecast</h2>
+      <div class="forecast-days"></div>
+    </div>
+  </div>
 </body>
 </html>
