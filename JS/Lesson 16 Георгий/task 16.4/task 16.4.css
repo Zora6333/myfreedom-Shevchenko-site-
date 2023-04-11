@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 /* Стили для всего виджета */
 .weather-widget {
   padding: 20px;
@@ -10,26 +17,39 @@
   justify-content: space-between;
   align-items: center;
   margin: 100px;
-  height: 500px;
+  height: 200px;
   margin-bottom: 20px;
   background-color: aqua;
 }
 .current-weather #city{
-padding-bottom: 300px;
+position: relative;
+left: 5%;
+bottom: 22%;
+height: 100px;
+width: 200px;
 }
 .current-weather #date{
-  margin-right: 200px;
+   padding-right: 100px;
+   position: relative;
+   right: 27%;
+   bottom: 30%;
   }
 .current-weather .temperature {
   font-size: 50px;
   font-weight: bold;
   color: #000000;
   padding-top: 50px;
+  position: relative;
+  right: 18%;
+  bottom: 30%;
 }
 
 .current-weather .description {
   font-size: 24px;
   color: #666666;
+  position: relative;
+  left: -5%;
+  bottom: 39%;
 }
 
 /* Стили для прогнозов */
@@ -63,6 +83,7 @@ padding-bottom: 300px;
 }
 
 .forecast-item .temperature {
+  display: flex;
   font-size: 24px;
   color: #666666;
   padding-left: 50%;

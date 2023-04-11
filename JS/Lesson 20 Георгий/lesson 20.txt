@@ -1,0 +1,142 @@
+Получить пользователей (users) от сервера https://jsonplaceholder.typicode.com/users.
+
+Вывести имена пользователей на страницу на боковой панели, как вертикальное меню.
+
+В основной части (справа от бокового меню) изначально показывается информация о первом пользователе.
+
+При клике на имя пользователя на боковой панели - в основной части информация меняется на выбранного пользователя.
+
+Для оформления использовать Bootstrap компонент Card:
+
+- для списка пользователей - шаблон Links and buttons - вариант с кнопками
+
+https://getbootstrap.com/docs/5.1/components/card/#list-groups
+
+- для отображения информации о пользователе - шаблон карточки без изображения.
+
+Нужно отобразить имя, ник, место проживания, компанию и email (как ссылку вида mailto:)
+
+ПРИМЕР, как должно получиться.
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-gsiRty8g6KdwUdSKijUgWREtmAPZVkS9XHkLvpE/Jfluk4ECq3BokdHll/AfIJw2A1cLQckNSaXcYPG08LTwsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./task 20.css">
+    <script src="./task 20.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group" id="user-list"></div>
+            </div>
+            <div class="col-md-9">
+                <div class="card" id="user-info">
+                    <div class="card-body">
+                        <h5 class="card-title" id="user-name"></h5>
+                        <p class="card-text" id="user-username"></p>
+                        <p class="card-text" id="user-email"></p>
+                        <p class="card-text" id="user-address"></p>
+                        <p class="card-text" id="user-company"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"
+        integrity="sha512-GJ6hxnphlW9yvDz+J10efU6a+U6I2Z+YfZ1gz2z3Jqfjb+9E6SBOJemRgsbHsJmcnMSZs4wfdMst/ZRmlweJHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.list-group-item.active {
+background-color: #007bff;
+border-color: #007bff;
+}
+.col-md-9 {
+
+position: relative;
+top: -500px;
+left: 200px;
+}
+.col-md-3 {
+display: flex;
+height: 600px;
+width: 100px;
+justify-content: flex-start;
+flex-direction: column;
+}
+.container-fluid {
+display: flex;
+flex-direction: column;
+}
+button {
+width: 100px;
+height: 30px;
+}
+
+
+
+$(document).ready(function() {
+const userList = $("#user-list");
+const userInfo = $("#user-info");
+const userName = $("#user-name");
+const userUsername = $("#user-username");
+const userEmail = $("#user-email");
+const userAddress = $("#user-address");
+const userCompany = $("#user-company");
+
+$.ajax({
+url: "https://jsonplaceholder.typicode.com/users",
+success: function(data) {
+for (let i = 0; i < data.length; i++) { const user=data[i]; const userButton=` <button type="button"
+    class="list-group-item list-group-item-action" data-user="${user.id}">
+    ${user.name}
+    </button>
+    `;
+    userList.append(userButton);
+    }
+
+    userList.on("click", ".list-group-item", function() {
+    const userId = $(this).data("user");
+    const activeUser = $(".list-group-item.active");
+
+    activeUser.removeClass("active");
+    $(this).addClass("active");
+
+    $.ajax({
+    url: `https://jsonplaceholder.typicode.com/users/${userId}`,
+    success: function(data) {
+    userName.text(data.name);
+
+    userUsername.text(`@${data.username}`);
+    userEmail.html(`<a href="mailto:${data.email}">${data.email}</a>`);
+    userAddress.text(`${data.address.city}, ${data.address.street}, ${data.address.suite}`);
+    userCompany.text(data.company.name);
+    }
+    });
+    });
+
+    userList.find(".list-group-item:first-child").click();
+    }
+    });
+    });

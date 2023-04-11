@@ -50,7 +50,7 @@ fetch(url)
       const date = new Date(forecast.dt_txt).toLocaleDateString();
       const temperature = Math.round(forecast.main.temp);
       const description = forecast.weather[0].description;
-
+      const windSpeed = forecast.wind.speed;
       const iconCode = forecast.weather[0].icon;
       const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
       const iconElement = document.createElement("img");
@@ -73,11 +73,15 @@ fetch(url)
       descriptionElement.classList.add("description");
       descriptionElement.textContent = description;
 
+      const windElement = document.createElement("div");
+      windElement.classList.add("wind");
+      windElement.textContent = `${windSpeed} m/s`;
+
       forecastItem.appendChild(iconElement);
       forecastItem.appendChild(dateElement);
       forecastItem.appendChild(temperatureElement);
       forecastItem.appendChild(descriptionElement);
-
+      forecastItem.appendChild(windElement);
       forecastContainer.appendChild(forecastItem);
     });
   })
