@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(193, 193, 215);
+  background: linear-gradient(
+    281deg,
+    rgba(193, 193, 215, 1) 0%,
+    rgba(163, 172, 176, 1) 8%,
+    rgba(121, 133, 133, 1) 13%,
+    rgba(28, 30, 31, 1) 22%,
+    rgba(46, 49, 60, 1) 62%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1300px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100px;
+}
+header nav {
+  width: 50%;
+}
+header .navigation-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  padding-right: 100px;
+}
+header .navigation-menu ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+header .navigation-menu ul li {
+  margin-left: 40%;
+  text-decoration: none;
+  font-family: fantasy;
+  font-size: 20px;
+}
+header .icon-logo {
+  height: 55%;
+  width: 100%;
+}
+header .icon {
+  padding-top: 30px;
+  padding-left: 50px;
+}
+footer {
+
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: azure;
+  display: flex;
+}
+footer .author {
+    display: flex;
+    justify-content: space-around;
+}
+footer .author p {
+padding-top: 35px;
+}
+
+/* кнопка вверх*/
+.btn-up button {
+    height: 50px;
+    width: 50px;
+    border: none;
+
+}
+.btn-up {
+    height: 50px;
+	position: relative;
+	right: -1600px;
+    top: 15px;   
+   }
+   .btn-up img {
+    height: 50px;
+    width: 50px;
+
+   }
+/* кнопка вверх*/
+
+main {
+    height: 1200px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+main #slider {
+  display: flex;
+  justify-content: center;
+    width: 100%;
+    height: 500px;
+}
+
+#slider {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+#slider img {
+  display: block;
+}
+#nav {
+  margin-top: -600px;
+  position: absolute;
+  height: 100px;
+  width: 600px;
+  text-align: center;
+}
+#nav a {
+  display:inline-flex;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 0.10px;
+  height: 0.10px;
+  text-decoration: none;
+}
+#nav a.active {
+  background-color: #e2e61c;
+}
+/* Слайдер назад или вперёд */
+.btn-next {
+  position:absolute;
+display: flex;
+align-items: center;
+top: 60%;
+right: 20%;
+}
+.btn-previous {
+  position:absolute;
+  display: flex;
+  align-items: center;
+  top: 60%;
+  right: 75%;
+}
+
+
+a {  
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+/* Слайдер назад или вперёд */
