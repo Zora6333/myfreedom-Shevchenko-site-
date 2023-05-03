@@ -1,81 +1,132 @@
-fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`)
-    .then(response => {
-        console.log(response);
-    })
-    .catch(error => {
-        console.error(error);
+// Include api for currency change
+const api = "https://api.exchangerate-api.com/v4/latest/USD";
+
+
+
+// For selecting different controls
+var search = document.querySelector(".searchBox");
+var convert = document.querySelector(".convert");
+var fromCurrecy = document.querySelector(".from");
+var toCurrecy = document.querySelector(".to");
+var finalValue = document.querySelector(".finalValue");
+var finalAmount = document.getElementById("finalAmount");
+let selectElement1 = document.getElementById("sel1")
+let selectElement2 = document.getElementById("sel2")
+var swape = document.querySelector(".Swich");
+var resultFrom;
+var resultTo;
+var searchValue;
+
+
+fetch("https://api.exchangerate-api.com/v4/latest/USD")
+  .then(response => response.json())
+  .then(data => {
+    // Получаем список валют из ответа API
+    const currencies = Object.keys(data.rates);
+
+    // Добавляем каждую валюту в элемент <select>
+    currencies.forEach(currency => {
+      const optionElement = document.createElement("option");
+      optionElement.value = currency;
+      optionElement.text = currency;
+      selectElement1.appendChild(optionElement);
     });
-
-const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`;
-
-const select1 = document.querySelector('.currency-selector1');
-const select2 = document.querySelector('.currency-selector2');
-const input1 = document.querySelector('.currency1');
-const input2 = document.querySelector('.currency2');
-let currencies = {};
-
-function fetchCurrencies() {
-    return new Promise((resolve, reject) => {
-      fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json')
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Network response was not ok.');
-        })
-        .then(data => resolve(data))
-        .catch(error => reject(error));
-    });
-  }
-  
-  const option = document.querySelector('option');
-
-  option.addEventListener('click', () => {
-    fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
-      .then(response => response.json())
-      .then(data => {
-        const currencies = {};
-  
-        // Store the exchange rates in the currencies object
-        for (const [key, value] of Object.entries(data.rates)) {
-          currencies[key] = value;
-        }
-  
-        // Update the input fields based on the initial currency values
-        updateInputFields(currencies);
-      })
-      .catch(error => {
-        console.error('Error fetching exchange rates:', error);
-      });
+  })
+  .catch(error => {
+    console.error("Ошибка при загрузке списка валют:", error);
   });
-  
-  function updateInputFields() {
 
-    const currency1 = select1.value;
-    const currency2 = select2.value;
-    const rate1 = currencies[currency1];
-    const rate2 = currencies[currency2];
-    const value1 = parseFloat(input1.value);
-    console.log('currency1:', currency1, 'rate1:', rate1, 'currency2:', currency2, 'rate2:', rate2, 'value1:', value1);
-    const value2 = input1.value === '' ? '' : (value1 * rate1 / rate2).toFixed(2);
-    console.log('value2:', value2);
-    input2.value = value2;
-  }
-  select1.addEventListener('change', updateInputFields);
-  select2.addEventListener('change', updateInputFields);
-  input1.addEventListener('input', updateInputFields);
-  
-  fetchCurrencies()
-    .then(data => {
-      currencies = data;
-      for (const [key, value] of Object.entries(data)) {
-        const option = document.createElement('option');
-        option.value = key;
-        option.text = `${key} (${value})`;
-        select1.add(option.cloneNode(true));
-        select2.add(option);
-      }
-    })
-    .catch(error => console.error(error));
+fetch("https://api.exchangerate-api.com/v4/latest/USD")
+  .then(response => response.json())
+  .then(data => {
+    // Получаем список валют из ответа API
+    const currencies = Object.keys(data.rates);
+
+    // Добавляем каждую валюту в элемент <select>
+    currencies.forEach(currency => {
+      const optionElement = document.createElement("option");
+      optionElement.value = currency;
+      optionElement.text = currency;
+      selectElement2.appendChild(optionElement);
+    });
+  })
+  .catch(error => {
+    console.error("Ошибка при загрузке списка валют:", error);
+  });
+
+// Event when currency is changed
+fromCurrecy.addEventListener('change', (event) => {
+  resultFrom = `${event.target.value}`;
+});
+
+// Event when currency is changed
+toCurrecy.addEventListener('change', (event) => {
+  resultTo = `${event.target.value}`;
+});
+
+search.addEventListener('input', updateValue);
+
+// Function for updating value
+function updateValue(e) {
+  searchValue = e.target.value;
+}
+
+// When user clicks, it calls function getresults
+convert.addEventListener("click", () => {
+// Function getresults
+function getResults() {
+  fetch(`${api}`)
+    .then(currency => {
+      return currency.json();
+    }).then(displayResults);
+}
+
+// Display results after conversion
+function displayResults(currency) {
+  let fromRate = currency.rates[resultFrom];
+  let toRate = currency.rates[resultTo];
+  finalValue.innerHTML = (toRate / fromRate).toFixed(2);
+  finalAmount.style.display = "block";
+}
+getResults()
+});
+
+
+
+swape.addEventListener("click", () => {
+  let selectedValue1 = selectElement1.options[selectElement1.selectedIndex].value;
+  let selectedValue2 = selectElement2.options[selectElement2.selectedIndex].value;
+
+  if (selectedValue1 !== '1' && selectedValue2 !== '1') {
+    const temp = selectedValue1;
+    selectedValue1 = selectedValue2;
+    selectedValue2 = temp;
+
+    selectElement1.value = selectedValue1;
+    selectElement2.value = selectedValue2;
+
+    function displayResults(currency) {
+      let fromRate = currency.rates[resultFrom];
+      let toRate = currency.rates[resultTo];
+      finalValue.innerHTML = (fromRate / toRate).toFixed(2);
+      finalAmount.style.display = "block";
+    }
+
+    function getResults() {
+      fetch(`${api}`)
+        .then(currency => {
+          return currency.json();
+        }).then(displayResults);
+    }
+    getResults()
+  }});
+
+
+
+// When user click on reset button
+function clearVal() {
+  window.location.reload();
+  document.getElementsByClassName("finalValue").innerHTML = "";
+};
 
 
