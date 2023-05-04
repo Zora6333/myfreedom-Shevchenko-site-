@@ -303,7 +303,6 @@ swape.addEventListener("click", () => {
   }});
 
 
-
 // When user click on reset button
 function clearVal() {
   window.location.reload();
