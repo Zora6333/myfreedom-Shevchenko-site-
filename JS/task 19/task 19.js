@@ -85,7 +85,7 @@ function getResults() {
 function displayResults(currency) {
   let fromRate = currency.rates[resultFrom];
   let toRate = currency.rates[resultTo];
-  finalValue.innerHTML = (toRate / fromRate).toFixed(2);
+  finalValue.innerHTML = ((toRate / fromRate)* searchValue).toFixed(2);
   finalAmount.style.display = "block";
 }
 getResults()
@@ -104,11 +104,11 @@ swape.addEventListener("click", () => {
 
     selectElement1.value = selectedValue1;
     selectElement2.value = selectedValue2;
-
+    convert.style.display = 'none'
     function displayResults(currency) {
       let fromRate = currency.rates[resultFrom];
       let toRate = currency.rates[resultTo];
-      finalValue.innerHTML = (fromRate / toRate).toFixed(2);
+      finalValue.innerHTML = ((fromRate / toRate)* searchValue).toFixed(2);
       finalAmount.style.display = "block";
     }
 
